@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lessons/sehifeKecid/secondPage.dart';
+import 'package:lessons/pageTransition&&dataTransfer/secondPage.dart';
+
 
 void main() {
   runApp(const MyApp());
