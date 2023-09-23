@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lessons/pageTransition&&dataTransfer/secondPage.dart';
-
+import 'package:lessons/sehifeKecid/backStack/gameScreen.dart';
 
 
 void main() {
@@ -94,7 +93,7 @@ class MainPageState extends State<MainPage> {
               margin: const EdgeInsetsDirectional.all( 55.0),
               child: Text(widget.title,
                 style: const TextStyle(
-                    fontSize: 20, fontStyle: FontStyle.italic, color: Colors.red),
+                    fontSize: 20, fontStyle: FontStyle.italic, color: Colors.yellow),
               ),
             )
         ),
@@ -102,33 +101,12 @@ class MainPageState extends State<MainPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+                ElevatedButton(onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const GameScreen(),));
+                },
+                    child: const Text("Play Game ")
 
-               Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: nameField,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: ageField,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: heightField,
-              ),
-              ElevatedButton(onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>  SecondPage(
-                  name: textFieldControllerName.text,
-                  age: int.parse(textFieldControllerAge.text),
-                  height: double.parse( textFieldControllerHeight.text),
                 )
-                )
-                );
-              },
-                  child: const Text(
-                    "Go to Second Page"
-                  )
-
-              )
             ],
           ),
         )

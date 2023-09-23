@@ -5,13 +5,21 @@ import 'package:flutter/material.dart';
 import 'mainPage.dart';
 
 class SecondPage extends StatefulWidget {
-  const SecondPage({super.key});
+  late String name;
+  late int age;
+  late double height;
+
+  SecondPage({super.key, required this.name, required this.age, required this.height});
+
 
   @override
   State<SecondPage> createState() => _SecondPageState();
 }
 
 class _SecondPageState extends State<SecondPage> {
+
+
+
    Future<bool> backButton(BuildContext context) async {
       print("basildiiiiiih");
        Navigator.push(context, MaterialPageRoute(builder: (context) => const MainPage("Main Page"),));
@@ -71,6 +79,16 @@ class _SecondPageState extends State<SecondPage> {
                   )
 
               ),
+              Container(
+                margin: const EdgeInsets.all(5.0),
+                child: Column(
+                  children: [
+                    Text("My name is ${widget.name}"),
+                    Text("My age is ${widget.age}"),
+                    Text("My height is ${widget.height}"),                  
+                  ],
+                ),
+              )
 
             ],
           ),
